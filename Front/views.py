@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import * 
-from Customers.models import *
+from Customers.models import Customer
 
 def index(request):
     is_activated = True
@@ -31,7 +31,7 @@ def blog_grid(request):
 
 def agents_grid(request):
     agents = True
-    info = Slider.objects.all()
+    info = Customer.objects.all()
     return render(request,'pages/agents-grid.html')
 
 def agents_single(request):
